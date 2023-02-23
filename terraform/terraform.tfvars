@@ -1,0 +1,1 @@
+domain_name = "vite-react-project"
