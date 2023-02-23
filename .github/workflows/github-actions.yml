@@ -143,7 +143,7 @@ jobs:
           terraform apply -auto-approve
 
       - name: Download artifact
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: dist
           path: dist
