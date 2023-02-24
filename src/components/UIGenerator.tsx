@@ -1,7 +1,7 @@
 import { Button, Form, Input, InputNumber, Switch } from 'antd'
 
 import mockdata from '../mock-data/ui.json'
-import { Types, Field } from '../types/Types'
+import { Field, Types } from '../types/Types'
 
 export default function UIGenerator() {
   const data: Types = JSON.parse(JSON.stringify(mockdata))
@@ -38,7 +38,7 @@ function render(fields: Field[]) {
   return fields.map((field) => {
     if (field.type === 'string') {
       return (
-        <Form.Item key={field.name} name={field.name} label={field.label} >
+        <Form.Item key={field.name} name={field.name} label={field.label}>
           <Input placeholder={field.placeholder} />
         </Form.Item>
       )
