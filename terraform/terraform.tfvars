@@ -1,1 +1,1 @@
-domain_name = "ui-generator"
+domain_name = "dynamic-ui-generator"
