@@ -1,5 +1,5 @@
 {
-  "name": "vite-react",
+  "name": "ui-generator",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -13,6 +13,7 @@
     "lint": "yarn lint:format && yarn lint:fix "
   },
   "dependencies": {
+    "antd": "^5.2.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
@@ -26,11 +27,11 @@
     "eslint-config-prettier": "^8.6.0",
     "eslint-config-standard-with-typescript": "^34.0.0",
     "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
     "eslint-plugin-n": "^15.0.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-react": "^7.32.2",
-    "eslint-plugin-jsx-a11y": "^6.7.1",
     "eslint-plugin-simple-import-sort": "^10.0.0",
     "prettier": "^2.8.4",
     "typescript": "^4.9.5",

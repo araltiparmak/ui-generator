@@ -1,0 +1,35 @@
+{
+  "forms": [
+    {
+      "name": "form1",
+      "fields": [
+        {
+          "name": "name",
+          "type": "string",
+          "label": "Name",
+          "placeholder": "Your name",
+          "required": true
+        },
+        {
+          "name": "surname",
+          "type": "string",
+          "label": "Surname",
+          "placeholder": "Your surname",
+          "required": true
+        },
+        {
+          "name": "age",
+          "type": "number",
+          "label": "Age",
+          "placeholder": "Your age",
+          "required": false
+        },
+        {
+          "name": "boolField",
+          "label": "A boolean field",
+          "type": "boolean"
+        }
+      ]
+    }
+  ]
+}

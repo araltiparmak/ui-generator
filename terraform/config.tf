@@ -7,7 +7,7 @@ terraform {
   }
   backend "s3" {
     bucket = "my-infra"
-    key    = "vite-react.tfstate"
+    key    = "ui-generator.tfstate"
     region = "eu-central-1"
   }
   required_version = ">= 1.3.0"
@@ -18,7 +18,7 @@ provider "aws" {
   default_tags {
     tags = {
       ManagedBy = "terraform"
-      Repo      = "vite-react"
+      Repo      = "ui-generator"
     }
   }
 }

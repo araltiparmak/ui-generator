@@ -1,1 +1,1 @@
-domain_name = "vite-react-project"
+domain_name = "ui-generator"
