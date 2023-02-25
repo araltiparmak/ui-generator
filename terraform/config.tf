@@ -23,6 +23,6 @@ provider "aws" {
   }
 }
 
-variable "domain_name" {
-  type = string
+locals {
+  domain_name = "dynamic-ui-generator"
 }
