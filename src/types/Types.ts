@@ -18,10 +18,8 @@ export type Field = {
   fields?: Field[]
   options?: Option[]
 }
-type Option = {
-  value: string
-  label: string
-}
+
+export type RenderedElement = JSX.Element[] | JSX.Element | null
 
 export type FieldType =
   | 'string'
@@ -30,3 +28,8 @@ export type FieldType =
   | 'checkbox'
   | 'select'
   | 'section'
+
+type Option = {
+  value: string
+  label: string
+}

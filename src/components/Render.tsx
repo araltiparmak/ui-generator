@@ -1,10 +1,10 @@
 import { Checkbox, Input, InputNumber, Select, Switch } from 'antd'
 import React from 'react'
 
-import { Field } from '../types/Types'
+import { Field, RenderedElement } from '../types/Types'
 import { FieldHolder } from './FieldHolder'
 
-export function render(fields: Field[]) {
+export function render(fields: Field[]): RenderedElement[] {
   return fields.map((field) => {
     if (field.type === 'string') {
       return (
@@ -42,7 +42,7 @@ export function render(fields: Field[]) {
       )
     }
     if (field.type === 'section' && field.fields) {
-      return render(field.fields)
+      return render(field.fields) as RenderedElement
     }
     return null
   })
