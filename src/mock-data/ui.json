@@ -1,21 +1,24 @@
 {
-  "forms": [
+  "steps": [
     {
       "name": "form1",
+      "title": "Form Title",
       "fields": [
         {
           "name": "name",
           "type": "string",
           "label": "Name",
           "placeholder": "Your name",
-          "required": true
+          "required": true,
+          "requiredMessage": "Please provide your name"
         },
         {
           "name": "surname",
           "type": "string",
           "label": "Surname",
           "placeholder": "Your surname",
-          "required": true
+          "required": true,
+          "requiredMessage": "Please provide your surname"
         },
         {
           "name": "age",
@@ -25,9 +28,71 @@
           "required": false
         },
         {
-          "name": "boolField",
+          "name": "booleanField",
           "label": "A boolean field",
           "type": "boolean"
+        },
+        {
+          "name": "checkboxField",
+          "label": "A Checkbox field",
+          "type": "checkbox"
+        },
+        {
+          "name": "selectField",
+          "label": "A Select field",
+          "type": "select",
+          "options": [
+            { "value": "value1", "label": "label1" },
+            { "value": "value2", "label": "label2" }
+          ]
+        },
+        {
+          "label": "Section",
+          "type": "section",
+          "fields": [
+            {
+              "name": "subsectionField",
+              "type": "string",
+              "label": "Subsection Field",
+              "placeholder": "Subsection Field",
+              "required": true
+            },
+            {
+              "label": "Second Level Section Field",
+              "type": "section",
+              "fields": [
+                {
+                  "name": "SecondLevelSubSectionField",
+                  "type": "string",
+                  "label": "Sub Subsection Field 2",
+                  "placeholder": "Subsection Field",
+                  "required": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "form2",
+      "title": "Form Title 2",
+      "fields": [
+        {
+          "name": "name",
+          "type": "string",
+          "label": "Name",
+          "placeholder": "Your name",
+          "required": true,
+          "requiredMessage": "Please provide your name"
+        },
+        {
+          "name": "surname",
+          "type": "string",
+          "label": "Surname",
+          "placeholder": "Your surname",
+          "required": true,
+          "requiredMessage": "Please provide your surname"
         }
       ]
     }

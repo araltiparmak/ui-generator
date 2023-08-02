@@ -1,59 +1,32 @@
-import { Button, Form, Input, InputNumber, Switch } from 'antd'
+import { Steps } from 'antd'
+import React, { useState } from 'react'
 
 import mockdata from '../mock-data/ui.json'
-import { Field, Types } from '../types/Types'
+import { Types } from '../types/Types'
+import FormStep from './FormStep'
 
 export default function UIGenerator() {
   const data: Types = JSON.parse(JSON.stringify(mockdata))
-  const form = data.forms[0]
-  const onFinish = (values: any) => {
-    console.log('Success:', values)
-  }
 
-  const onFinishFailed = (errorInfo: any) => {
-    console.log('Failed:', errorInfo)
-  }
+  const [current, setCurrent] = useState(0)
+
+  const items = data.steps.map((item, index) => ({
+    key: item.title,
+    title: item.title,
+    content: (
+      <FormStep
+        stepsLength={data.steps.length}
+        step={data.steps[index]}
+        current={current}
+        setCurrent={setCurrent}
+      />
+    ),
+  }))
+
   return (
-    <Form
-      name={form.name}
-      labelCol={{ span: 8 }}
-      wrapperCol={{ span: 16 }}
-      style={{ maxWidth: 600 }}
-      initialValues={{ remember: true }}
-      onFinish={onFinish}
-      onFinishFailed={onFinishFailed}
-      autoComplete="off"
-    >
-      {render(form.fields)}
-      <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-        <Button type="primary" htmlType="submit">
-          Submit
-        </Button>
-      </Form.Item>
-    </Form>
+    <>
+      <Steps current={current} items={items} />
+      <div>{items[current].content}</div>
+    </>
   )
-}
-
-function render(fields: Field[]) {
-  return fields.map((field) => {
-    if (field.type === 'string') {
-      return (
-        <Form.Item key={field.name} name={field.name} label={field.label}>
-          <Input placeholder={field.placeholder} />
-        </Form.Item>
-      )
-    } else if (field.type === 'number') {
-      return (
-        <Form.Item key={field.name} name={field.name} label={field.label}>
-          <InputNumber placeholder={field.placeholder} />
-        </Form.Item>
-      )
-    } else if (field.type === 'boolean') {
-      return (
-        <Form.Item key={field.name} name={field.name} label={field.label}>
-          <Switch />
-        </Form.Item>
-      )
-    }
-  })
 }
