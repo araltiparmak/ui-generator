@@ -24,5 +24,5 @@ provider "aws" {
 }
 
 locals {
-  domain_name = "dynamic-ui-generator"
+  domain_name = "dynamic-ui-generator-v2"
 }
