@@ -59,15 +59,15 @@ export default function FormStep({ stepsLength, step, current, setCurrent }: Pro
       onFinishFailed={onFinishFailed}
       autoComplete="off"
     >
-      <Card title={step.title} style={{ width: 500 }}>
+      <Card title={step.title}>
         {render(step.fields)}
-        <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
+        <Form.Item style={{ marginTop: 16 }}>
           <Button type="primary" htmlType="submit">
             Submit
           </Button>
         </Form.Item>
 
-        <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
+        <Form.Item>
           {current > 0 && (
             <Button style={{ margin: '0 8px' }} onClick={() => prev()}>
               Previous

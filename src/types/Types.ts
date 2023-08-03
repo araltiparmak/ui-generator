@@ -12,6 +12,7 @@ export type Step = {
 export type Field = {
   name: string
   label: string
+  title?: string
   type: FieldType
   required: boolean
   requiredMessage?: string

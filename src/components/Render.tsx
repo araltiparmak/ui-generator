@@ -1,4 +1,4 @@
-import { Checkbox, Input, InputNumber, Select, Switch } from 'antd'
+import { Card, Checkbox, Input, InputNumber, Select, Switch } from 'antd'
 import React from 'react'
 
 import { Field, RenderedElement } from '../types/Types'
@@ -38,7 +38,11 @@ export function render(fields: Field[]): RenderedElement[] {
           </FieldHolder>
         )
       case 'section':
-        return render(field.fields || []) as RenderedElement
+        return (
+          <Card type="inner" title={field.title}>
+            {render(field.fields || []) as RenderedElement}
+          </Card>
+        )
       default:
         return null
     }

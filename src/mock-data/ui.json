@@ -48,8 +48,8 @@
           ]
         },
         {
-          "label": "Section",
           "type": "section",
+          "title": "Section 1",
           "fields": [
             {
               "name": "subsectionField",
@@ -59,14 +59,14 @@
               "required": true
             },
             {
-              "label": "Second Level Section Field",
+              "title": "Section 2",
               "type": "section",
               "fields": [
                 {
                   "name": "SecondLevelSubSectionField",
                   "type": "string",
                   "label": "Sub Subsection Field 2",
-                  "placeholder": "Subsection Field",
+                  "placeholder": "Second Level Subsection Field",
                   "required": true
                 }
               ]
