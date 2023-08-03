@@ -26,7 +26,7 @@ export default function UIGenerator() {
   return (
     <>
       <Steps current={current} items={items} />
-      <div>{items[current].content}</div>
+      <div style={{ marginTop: 20 }}>{items[current].content}</div>
     </>
   )
 }
