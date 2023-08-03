@@ -6,6 +6,7 @@ export type Step = {
   fields: Field[]
   name: string
   title: string
+  url: string
 }
 
 export type Field = {
