@@ -13,10 +13,31 @@ type Props = {
 
 export default function FormStep({ stepsLength, step, current, setCurrent }: Props) {
   const onFinish = (values: any) => {
-    console.log('Success:', values)
-    if (current < stepsLength - 1) {
-      setCurrent(current + 1)
-    }
+    console.log(values)
+
+    fetch(step.url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(values),
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok')
+        }
+        return response
+      })
+      .then((data) => {
+        console.log('Data:', data)
+
+        if (current < stepsLength - 1) {
+          setCurrent(current + 1)
+        }
+      })
+      .catch((error) => {
+        console.error('Error:', error)
+      })
   }
 
   const prev = () => {

@@ -2,7 +2,8 @@
   "steps": [
     {
       "name": "form1",
-      "title": "Form Title",
+      "title": "Step 1",
+      "url": "https://posthere.io/3c47-4b6a-a230",
       "fields": [
         {
           "name": "name",
@@ -76,7 +77,8 @@
     },
     {
       "name": "form2",
-      "title": "Form Title 2",
+      "title": "Step 2",
+      "url": "https://posthere.io/3c47-4b6a-a230",
       "fields": [
         {
           "name": "name",
