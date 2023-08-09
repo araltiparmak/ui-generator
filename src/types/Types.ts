@@ -9,6 +9,8 @@ export type Step = {
   url: string
 }
 
+//export type Field = GenericField | CustomField
+
 export type Field = {
   name: string
   label: string
@@ -30,6 +32,9 @@ export type FieldType =
   | 'checkbox'
   | 'select'
   | 'section'
+  | CustomType
+
+type CustomType = 'SelectVersion'
 
 type Option = {
   value: string

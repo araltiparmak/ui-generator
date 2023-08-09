@@ -2,11 +2,12 @@ import { Card, Checkbox, Input, InputNumber, Select, Switch } from 'antd'
 import React from 'react'
 
 import { Field, RenderedElement } from '../types/Types'
+import DynamicComponentLoader from './DynamicComponentLoader'
 import { FieldHolder } from './FieldHolder'
 
 export function render(fields: Field[]): RenderedElement[] {
   return fields.map((field) => {
-    switch (field.type) {
+    switch (field?.type) {
       case 'string':
         return (
           <FieldHolder key={field.name} field={field}>
@@ -44,7 +45,7 @@ export function render(fields: Field[]): RenderedElement[] {
           </Card>
         )
       default:
-        return null
+        return <DynamicComponentLoader field={field} />
     }
   })
 }
