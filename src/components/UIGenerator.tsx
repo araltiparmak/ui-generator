@@ -1,8 +1,8 @@
-import { Steps } from 'antd'
-import React, { useState } from 'react'
+import {Steps} from 'antd'
+import {useState} from 'react'
 
 import mockdata from '../mock-data/ui_v1.json'
-import { Types } from '../types/Types'
+import {Types} from '../types/Types'
 import FormStep from './FormStep'
 
 export default function UIGenerator() {

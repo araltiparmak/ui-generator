@@ -1,5 +1,4 @@
 import { Card, Checkbox, Input, InputNumber, Select, Switch } from 'antd'
-import React from 'react'
 
 import { Field, RenderedElement } from '../types/Types'
 import DynamicComponentLoader from './DynamicComponentLoader'

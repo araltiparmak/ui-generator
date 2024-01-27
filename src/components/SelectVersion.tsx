@@ -1,6 +1,5 @@
 //create react component
 import { Select } from 'antd'
-import React from 'react'
 
 export default function SelectVersion() {
   const options = [

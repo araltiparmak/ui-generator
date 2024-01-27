@@ -5,9 +5,9 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 
 import ResultPage from './components/ResultPage'
 import UIGenerator from './components/UIGenerator'
-import { initialState } from './reducer/FormReducer'
+//import { initialState } from './reducer/FormReducer'
 
-const FormContext = createContext(initialState)
+const FormContext = createContext<null>(null)
 
 export default function App() {
   return (

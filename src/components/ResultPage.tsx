@@ -1,6 +1,4 @@
 import { Button, Result } from 'antd'
-import React from 'react'
-
 function ResultPage() {
   return (
     <Result
