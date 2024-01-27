@@ -1,0 +1,123 @@
+{
+  "steps": [
+    {
+      "name": "selectVersion",
+      "title": "Select Version",
+      "url": "next",
+      "fields": [
+        {
+          "name": "version",
+          "type": "SelectVersion",
+          "label": "Version",
+          "placeholder": "Version",
+          "required": true,
+          "requiredMessage": "Please select version"
+        }
+      ]
+    },
+    {
+      "name": "form1",
+      "title": "Step 1",
+      "url": "https://posthere.io/3c47-4b6a-a230",
+      "fields": [
+        {
+          "name": "name",
+          "type": "string",
+          "label": "Name",
+          "placeholder": "Your name",
+          "required": true,
+          "requiredMessage": "Please provide your name"
+        },
+        {
+          "name": "surname",
+          "type": "string",
+          "label": "Surname",
+          "placeholder": "Your surname",
+          "required": true,
+          "requiredMessage": "Please provide your surname"
+        },
+        {
+          "name": "age",
+          "type": "number",
+          "label": "Age",
+          "placeholder": "Your age",
+          "required": false
+        },
+        {
+          "name": "booleanField",
+          "label": "A boolean field",
+          "type": "boolean"
+        },
+        {
+          "name": "checkboxField",
+          "label": "A Checkbox field",
+          "type": "checkbox"
+        },
+        {
+          "name": "selectField",
+          "label": "A Select field",
+          "type": "select",
+          "options": [
+            {
+              "value": "value1",
+              "label": "label1"
+            },
+            {
+              "value": "value2",
+              "label": "label2"
+            }
+          ]
+        },
+        {
+          "type": "section",
+          "title": "Section 1",
+          "fields": [
+            {
+              "name": "subsectionField",
+              "type": "string",
+              "label": "Subsection Field",
+              "placeholder": "Subsection Field",
+              "required": true
+            },
+            {
+              "title": "Section 2",
+              "type": "section",
+              "fields": [
+                {
+                  "name": "SecondLevelSubSectionField",
+                  "type": "string",
+                  "label": "Sub Subsection Field 2",
+                  "placeholder": "Second Level Subsection Field",
+                  "required": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "form2",
+      "title": "Step 2",
+      "url": "https://posthere.io/3c47-4b6a-a230",
+      "fields": [
+        {
+          "name": "name",
+          "type": "string",
+          "label": "Name",
+          "placeholder": "Your name",
+          "required": true,
+          "requiredMessage": "Please provide your name"
+        },
+        {
+          "name": "surname",
+          "type": "string",
+          "label": "Surname",
+          "placeholder": "Your surname",
+          "required": true,
+          "requiredMessage": "Please provide your surname"
+        }
+      ]
+    }
+  ]
+}

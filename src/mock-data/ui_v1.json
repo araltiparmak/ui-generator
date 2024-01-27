@@ -1,6 +1,21 @@
 {
   "steps": [
     {
+      "name": "selectVersion",
+      "title": "Select Version",
+      "url": "next",
+      "fields": [
+        {
+          "name": "version",
+          "type": "SelectVersion",
+          "label": "Version",
+          "placeholder": "Version",
+          "required": true,
+          "requiredMessage": "Please select version"
+        }
+      ]
+    },
+    {
       "name": "form1",
       "title": "Step 1",
       "url": "https://posthere.io/3c47-4b6a-a230",
@@ -43,8 +58,14 @@
           "label": "A Select field",
           "type": "select",
           "options": [
-            { "value": "value1", "label": "label1" },
-            { "value": "value2", "label": "label2" }
+            {
+              "value": "value1",
+              "label": "label1"
+            },
+            {
+              "value": "value2",
+              "label": "label2"
+            }
           ]
         },
         {
@@ -98,5 +119,9 @@
         }
       ]
     }
-  ]
+  ],
+  "result": {
+    "title": "Thank you",
+    "message": "Thank you for submitting the form"
+  }
 }
