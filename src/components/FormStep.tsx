@@ -1,6 +1,7 @@
 import { Button, Card, Form } from 'antd'
-import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
+import { ApiService } from '../api/ApiService'
 import { Step } from '../types/Types'
 import { render } from './Render'
 
@@ -12,32 +13,27 @@ type Props = {
 }
 
 export default function FormStep({ stepsLength, step, current, setCurrent }: Props) {
+  const navigate = useNavigate()
+
+  const api = new ApiService()
+
   const onFinish = (values: any) => {
-    console.log(values)
-
-    fetch(step.url, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(values),
-    })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error('Network response was not ok')
-        }
-        return response
-      })
-      .then((data) => {
-        console.log('Data:', data)
-
+    console.log('values:', values)
+    if (step.url === 'next') {
+      setCurrent(current + 1)
+      return
+    }
+    if (step.url !== 'next') {
+      api.post(step.url, values).then((response) => {
+        console.log('response:', response)
         if (current < stepsLength - 1) {
           setCurrent(current + 1)
         }
+        if (current === stepsLength - 1) {
+          navigate('/result')
+        }
       })
-      .catch((error) => {
-        console.error('Error:', error)
-      })
+    }
   }
 
   const prev = () => {
@@ -67,13 +63,13 @@ export default function FormStep({ stepsLength, step, current, setCurrent }: Pro
           </Button>
         </Form.Item>
 
-        <Form.Item>
-          {current > 0 && (
+        {current > 0 && (
+          <Form.Item>
             <Button style={{ margin: '0 8px' }} onClick={() => prev()}>
               Previous
             </Button>
-          )}
-        </Form.Item>
+          </Form.Item>
+        )}
       </Card>
     </Form>
   )
