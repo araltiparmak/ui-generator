@@ -39,7 +39,7 @@ export function render(fields: Field[]): RenderedElement[] {
         )
       case 'section':
         return (
-          <Card type="inner" title={field.title}>
+          <Card size="small" type="inner" title={field.title}>
             {render(field.fields || []) as RenderedElement}
           </Card>
         )

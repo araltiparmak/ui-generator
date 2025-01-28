@@ -1,15 +1,17 @@
 import { Button, Result } from 'antd'
+import { useNavigate } from 'react-router-dom'
 function ResultPage() {
+  const navigate = useNavigate()
+
   return (
     <Result
       status="success"
-      title="Successfully Purchased Cloud Server ECS!"
-      subTitle="Order number: 2017182818828182881 Cloud server configuration takes 1-5 minutes, please wait."
+      title="Successfully sent the form!"
       extra={[
         <Button type="primary" key="console">
-          Go Console
+          Go to the Console
         </Button>,
-        <Button key="buy">Buy Again</Button>,
+        <Button onClick={() => navigate('/')}>Fill the form again</Button>,
       ]}
     />
   )

@@ -1,8 +1,8 @@
-import {Steps} from 'antd'
-import {useState} from 'react'
+import { Steps } from 'antd'
+import { useState } from 'react'
 
 import mockdata from '../mock-data/ui_v1.json'
-import {Types} from '../types/Types'
+import { Types } from '../types/Types'
 import FormStep from './FormStep'
 
 export default function UIGenerator() {
@@ -24,9 +24,11 @@ export default function UIGenerator() {
   }))
 
   return (
-    <>
+    <div>
       <Steps current={current} items={items} />
-      <div style={{ marginTop: 20 }}>{items[current].content}</div>
-    </>
+      <div className={'steps-content'} style={{ marginTop: 20 }}>
+        {items[current].content}
+      </div>
+    </div>
   )
 }
