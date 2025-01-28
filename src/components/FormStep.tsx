@@ -1,9 +1,11 @@
-import { Button, Card, Form } from 'antd'
+import { Card, Flex, Form } from 'antd'
 import { useNavigate } from 'react-router-dom'
 
 import { ApiService } from '../api/ApiService'
 import { Step } from '../types/Types'
 import { render } from './Render'
+import { BackButton } from './BackButton.tsx'
+import { SubmitButton } from './atoms/SubmitButton.tsx'
 
 type Props = {
   stepsLength: number
@@ -36,10 +38,6 @@ export default function FormStep({ stepsLength, step, current, setCurrent }: Pro
     }
   }
 
-  const prev = () => {
-    setCurrent(current - 1)
-  }
-
   const onFinishFailed = (errorInfo: any) => {
     console.log('Failed:', errorInfo)
   }
@@ -55,21 +53,15 @@ export default function FormStep({ stepsLength, step, current, setCurrent }: Pro
       onFinishFailed={onFinishFailed}
       autoComplete="off"
     >
-      <Card title={step.title}>
+      <Card size="small" title={step.title}>
         {render(step.fields)}
-        <Form.Item style={{ marginTop: 16 }}>
-          <Button type="primary" htmlType="submit">
-            Submit
-          </Button>
-        </Form.Item>
+        <div style={{ marginTop: '10px' }}>
+          <Flex gap="small" justify={'flex-end'}>
+            {current > 0 && <BackButton onClick={() => setCurrent(current - 1)} />}
 
-        {current > 0 && (
-          <Form.Item>
-            <Button style={{ margin: '0 8px' }} onClick={() => prev()}>
-              Previous
-            </Button>
-          </Form.Item>
-        )}
+            <SubmitButton />
+          </Flex>
+        </div>
       </Card>
     </Form>
   )

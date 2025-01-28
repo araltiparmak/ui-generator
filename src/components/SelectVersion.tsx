@@ -6,5 +6,6 @@ export default function SelectVersion() {
     { label: '1', value: '1' },
     { label: '2', value: '2' },
   ]
-  return <Select options={options} defaultValue={options?.[0]} />
+
+  return <Select options={options} />
 }
